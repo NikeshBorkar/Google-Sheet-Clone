@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_spreadsheet_x16.png"
+        type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Google Sheet Clone</title>
+</head>
+
+<body>
+
+    <div id="root">
+        <nav id="navbar">
+            <ul>
+                <li>File</li>
+                <li>Home</li>
+                <li>Insert</li>
+                <li>Layout</li>
+                <li>Help</li>
+            </ul>
+        </nav>
+        <section class="head">
+            <form class="head-form">
+                <select name="fontFamily">
+                    <option value="" selected>Default</option>
+                    <option value="monospace">Monospace</option>
+                    <option value="Lucida Sans">Lucida</option>
+                    <option value="sans-serif">sans-serif</option>
+                    <option value="Georgia, 'Times New Roman', Times, serif">Georgia</option>
+                    <option value="Arial, Helvetica, sans-serif">Arial</option>
+                </select>
+                <input type="number" name="fontSize" value="14" min="10" max="36">
+                <div>
+                    <input type="checkbox" name="bold" id="bold" />
+                    <label for="bold" class="material-icons">format_bold</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" name="italic" id="italic" />
+                    <label for="italic" class="material-icons">format_italic</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" name="underline" id="underline" />
+                    <label for="underline" class="material-icons">format_underline</label>
+                </div>
+                <div>
+                    <input type="radio" name="align" id="align-left" checked value="left">
+                    <label class="material-icons" for="align-left">format_align_left</label>
+                </div>
+                <div>
+                    <input type="radio" name="align" id="center" value="center">
+                    <label class="material-icons" for="center">format_align_center</label>
+                </div>
+                <div>
+                    <input type="radio" name="align" id="align-right" value="right">
+                    <label class="material-icons" for="align-right">format_align_right</label>
+                </div>
+
+
+                <div>
+                    <input type="color" name="textColor" id="text-color">
+                    <label class="material-icons" for="text-color">format_color_text</label>
+                </div>
+                <div>
+                    <input type="color" name="bgColor" id="bg-color" value="#ffffff">
+                    <label class="material-icons" for="bg-color">format_color_fill</label>
+                </div>
+
+                <div>
+                    <a href="#" id="export" class="fa-solid fa-cloud-arrow-down fa-xl">
+                    </a>
+                </div>
+                <div>
+                    <input type="file" id="import">
+                    <label for="import"><i class="fa-solid fa-cloud-arrow-up fa-xl"></i></label>
+                </div>
+                <div id="saving_div">
+                    <div class="loader"></div>
+                    Saving
+                </div>
+            </form>
+            <div class="row2">
+                <div class="selected-cell">NA</div>
+                <label for="fx">fx</label>
+                <input type="text" name="fx" id="fx" />
+            </div>
+        </section>
+        <section class="container">
+            <div class="header"></div>
+            <div class="body"></div>
+        </section>
+        <section class="foot">
+            <form class="foot-form">
+                <button type="button" onclick="createNewSheet()" class="material-icons">add</button>
+                <div>
+                    <input type="radio" name="sheet" id="sheet1" value="sheet1" checked>
+                    <label for="sheet1">Sheet1</label>
+                </div>
+            </form>
+        </section>
+    </div>
+    <script src="data-flow.js"></script>
+    <script src="script.js"></script>
+    <script src="export-import.js"></script>
+</body>
+
+</html>
